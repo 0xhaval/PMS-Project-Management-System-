@@ -1,4 +1,27 @@
-<div class="sidebar-menu">
+<style>
+    .sidebar-wrapper{
+        background-color: #b3453f;
+        color: white
+    }
+    ul li a{
+        color: white
+    }
+
+    .sidebar-wrapper .menu .sidebar-link > span{
+        color: white;
+        font-size: 16px
+    }
+
+    .sidebar-wrapper .menu .submenu li a{
+        color: white;
+        font-size: 14px;
+    }
+
+    .sidebar-wrapper .menu .sidebar-title{
+        color: white
+    }
+</style>
+<div class="sidebar-menu" >
     <ul class="menu">
 
 
@@ -6,8 +29,8 @@
 
 
 
-            <li class="sidebar-item active">
-                <a href="index.html" class='sidebar-link'>
+            <li class="sidebar-item">
+                <a href="{{ route('admin.home') }}" class='sidebar-link'>
                     <i data-feather="home" width="20"></i>
                     <span>Dashboard</span>
                 </a>
@@ -105,6 +128,14 @@
 
             <li class="sidebar-item ">
                 <a href="{{ route('admin.project.result') }}" class='sidebar-link'>
+                    <i data-feather="award" width="20"></i>
+                    <span>Choice Result</span>
+                </a>
+
+            </li>
+
+            <li class="sidebar-item ">
+                <a href="{{ route('admin.project.final.show') }}" class='sidebar-link'>
                     <i data-feather="award" width="20"></i>
                     <span>Final Result</span>
                 </a>

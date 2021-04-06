@@ -42,7 +42,7 @@
                         <div class="form-group has-icon-left">
                             <h5 for="first-name-icon">Name</h5>
                             <div class="position-relative">
-                                <input name="name" type="text" class="form-control" placeholder="Ali Jasim" id="first-name-icon">
+                                <input dir="rtl"   name="name" type="text" class="form-control" placeholder="Ali Jasim" id="first-name-icon">
                                 <div class="form-control-icon">
                                     <i data-feather="user"></i>
                                 </div>

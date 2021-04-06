@@ -1,9 +1,28 @@
 @extends('backend.layouts.app')
 @section('content')
+<style>
+.background-img{
+    background-image: url(assets/images/graduation.jpg);
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.card.card-statistic {
+    box-shadow: 1px 2px 5px rgb(30 69 138);
+    background: linear-gradient(to bottom, #aa433f, #c84c42);
+    border: none;
+}
+</style>
 <div class="main-content container-fluid">
     <div class="page-title">
         <h3>Dashboard</h3>
         <p class="text-subtitle text-muted">A good dashboard to display your statistics</p>
+    </div>
+    <div class="background-img">
+
     </div>
     <section class="section">
         <div class="row mb-2">

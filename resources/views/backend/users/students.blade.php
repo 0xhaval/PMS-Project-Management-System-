@@ -22,17 +22,43 @@
                 <div class="card-header">
                   <h4 class="card-title">Info</h4>
                   <p class="card-text">This is Sortable Table, Cilck on the Column Name to Sort</p>
+                  <a href="#" class="btn btn-secondary float-right" onclick="window.print()">Print</a>
                 </div>
-                <div class="card-content">
+                <style>
+                    @media print {
+                        body *{
+                            visibility: hidden;
+                        }
+                        .print-container, .print-container * {
+                            visibility :visible;
+                        }
+
+                        .print-container{
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                        }
+
+                        .table td, .dataTable-table td, .table thead th, .dataTable-table thead th{
+                            font-size: 14pt;
+                            color: black;
+                            margin: 0;
+
+                        }
+                        #main .main-content{
+                            padding: 0 !important;
+                        }
+                    }
+                </style>
+                <div class="card-content print-container">
                   <!-- table hover -->
                   <div class="table-responsive">
                     <table class="table table-hover mb-0 sortable">
                       <thead>
                         <tr>
-                          <th>NAME</th>
+                            <th>NAME</th>
                           <th>EMAIL</th>
                           <th>PASSWORD</th>
-                          <th>DEPARTMENT</th>
                           <th>GROUP</th>
                         </tr>
                       </thead>
@@ -43,7 +69,6 @@
                                 <td class="text-bold-500">{{ $user->name }}</td>
                                 <td class="text-bold-500">{{ $user->email }}</td>
                                 <td class="text-bold-500">{{ $user->password }}</td>
-                                <td class="text-bold-500">{{ $user->dept}}</td>
                                 <td class="text-bold-500">{{ $user->group->name}}</td>
                             </tr>
                           @endif

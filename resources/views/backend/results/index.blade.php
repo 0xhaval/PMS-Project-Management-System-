@@ -33,7 +33,7 @@
                                 <tr>
                                   <th>GROUP NAME</th>
                                   <th>CHOICES</th>
-                                  <th>GROUP AVARAGE</th>
+                                  <th>GROUP AVG</th>
                                   <th>AVG THE HIGHEST STD</th>
                                 </tr>
                               </thead>
@@ -89,22 +89,42 @@
                 </div>
             </div>
             <div class="col-4">
-                <form action="" method="post">
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> <br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+                @if ($message = Session::get('message'))
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+                @endif
+                <form action="{{ route('admin.project.final') }}" method="post">
+                    @csrf
                     <legend>Enter group choice</legend>
-                    @foreach ($results as $result)
+                    @foreach ($results as $i => $result)
                         <div class="row">
                             <div class="col-7">
                                 <div class="form-group">
-                                    <input class="form-control"style="font-size: 20px" type="text" placeholder="" value="{{ $result->group->name }}" readonly>
+                                    <input type="text" value="{{ $result->group->id }}" hidden>
+                                    <input name="choice[{{ $i }}][key]" class="form-control"style="font-size: 20px" type="text" placeholder="" value="{{ $result->group->name }}" readonly>
                                 </div>
                             </div>
                             <div class="col-5">
                                 <div class="form-group">
-                                    <input type="number" name="" id="" class="form-control" style="font-size: 20px">
+                                    <input type="number" name="choice[{{ $i }}][value]" id="" class="form-control" style="font-size: 20px">
                                 </div>
                             </div>
                         </div>
                     @endforeach
+                    <div class="form-group">
+                        <input type="submit" value="Send" class="btn btn-block btn-primary">
+                    </div>
                 </form>
             </div>
         </div>

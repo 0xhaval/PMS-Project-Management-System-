@@ -27,13 +27,42 @@
                 <div class="card-header">
                   <h4 class="card-title">Info</h4>
                   <p class="card-text">This is Sortable Table, Cilck on the Column Name to Sort</p>
+                  <a href="#" class="btn btn-secondary float-right" onclick="window.print()">Print</a>
                 </div>
                 <div class="card-content">
                   <!-- table hover -->
                   <div class="table-responsive">
-                    <table class="table table-hover mb-0 sortable">
+                    <table class="table table-hover mb-0 sortable print-container">
+                        <style>
+                            @media print {
+
+                                .print-container, .print-container * {
+                                    visibility :visible;
+                                }
+
+                                .print-container{
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                }
+
+                                .table td, .dataTable-table td, .table thead th, .dataTable-table thead th{
+                                    font-size: 14pt;
+                                    color: black;
+                                    margin: 0;
+
+                                }
+                                #main .main-content{
+                                    padding: 0 !important;
+                                }
+                                body *, .btn{
+                                    visibility: hidden;
+                                }
+                            }
+                        </style>
                       <thead>
                         <tr>
+                          <th>ID</th>
                           <th>NAME</th>
                           <th>SUPERVISOR</th>
                           <th>DEPT</th>
@@ -44,10 +73,11 @@
                       <tbody>
                           @forelse ($projects as $project)
                           <tr class="item">
+                            <td class="text-bold-500">{{ $project->project_number }}</td>
                             <td class="text-bold-500">{{ $project->name }}</td>
                             <td class="text-bold-500">{{ $project->supervisor }}</td>
                             <td class="text-bold-500">{{ $project->dept }}</td>
-                            <td><span class="badge bg-success text-white">{{ $project->projectType->name }}</span></td>
+                            <td><span class="badge bg-warning text-blue">{{ $project->projectType->name }}</span></td>
 
                             <td>
                               <a href="{{ route('admin.project.edit', $project->id) }}" class="btn icon icon-left btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg> Edit</a>

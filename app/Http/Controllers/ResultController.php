@@ -6,6 +6,7 @@ use App\Models\Group;
 use App\Models\Project;
 use App\Models\Result;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ResultController extends Controller
 {

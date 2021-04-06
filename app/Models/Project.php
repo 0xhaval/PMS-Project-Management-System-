@@ -27,4 +27,9 @@ class Project extends Model
     {
         return $this->hasOne(Result::class);
     }
+
+    public function finalResult()
+    {
+        return $this->hasOne(finalResult::class);
+    }
 }

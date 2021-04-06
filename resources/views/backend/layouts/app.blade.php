@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.svg') }}" type="image/x-icon">
+    <style>
+        .table td, .dataTable-table td, .table thead th, .dataTable-table thead th{
+            font-size: 20px;
+        }
+        .btn{
+            font-size: 20px
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -16,7 +24,7 @@
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header">
                     <a href="{{ route('admin.home') }}">
-                        <h2>PMS (Project Managment System)</h2>
+                        <h2 style="color: white">PMS (Project Managment System)</h2>
                     </a>
                 </div>
 
