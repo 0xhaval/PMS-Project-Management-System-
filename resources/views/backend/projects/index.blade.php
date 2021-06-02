@@ -24,42 +24,43 @@
         <div class="row" id="table-hover-row">
             <div class="col-12">
               <div class="card">
-                <div class="card-header">
-                  <h4 class="card-title">Info</h4>
-                  <p class="card-text">This is Sortable Table, Cilck on the Column Name to Sort</p>
-                  <a href="#" class="btn btn-secondary float-right" onclick="window.print()">Print</a>
+                <div class="card-header" style="font-size: 20px; color:red">
+                    <h4 class="card-title" style="font-size: 25px; color:red">Note</h4>
+                    <p class="card-text">Put your note here</p>
+                  <a href="#" class="btn btn-danger float-right" onclick="window.print()">Print</a>
                 </div>
+                <style>
+                    @media print {
+
+                        .print-container, .print-container * {
+                            visibility :visible;
+                        }
+
+                        .print-container{
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                        }
+
+                        .table td, .dataTable-table td, .table thead th, .dataTable-table thead th{
+                            font-size: 14pt;
+                            color: black;
+                            margin: 0;
+
+                        }
+                        #main .main-content{
+                            padding: 0 !important;
+                        }
+                        body *, .btn{
+                            visibility: hidden;
+                        }
+                    }
+                </style>
                 <div class="card-content">
                   <!-- table hover -->
                   <div class="table-responsive">
                     <table class="table table-hover mb-0 sortable print-container">
-                        <style>
-                            @media print {
-
-                                .print-container, .print-container * {
-                                    visibility :visible;
-                                }
-
-                                .print-container{
-                                    position: absolute;
-                                    left: 0;
-                                    top: 0;
-                                }
-
-                                .table td, .dataTable-table td, .table thead th, .dataTable-table thead th{
-                                    font-size: 14pt;
-                                    color: black;
-                                    margin: 0;
-
-                                }
-                                #main .main-content{
-                                    padding: 0 !important;
-                                }
-                                body *, .btn{
-                                    visibility: hidden;
-                                }
-                            }
-                        </style>
+                        <h1>Project Inforamtion</h1>
                       <thead>
                         <tr>
                           <th>ID</th>

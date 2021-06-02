@@ -47,11 +47,6 @@
                                 </li>
                             @endif
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -79,6 +74,20 @@
             </div>
         </nav>
 
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-md-8">
+                    <h1>Welcome to Project Management and Distribution System</h1>
+                    <hr>
+                    <h1>مرحبا بكم في نظام إداره وتوزيع المشاريع</h1>
+                    <hr>
+                    <h2 class=" text-center">Build By Computer Sceince and Information Technology College</h2>
+                </div>
+                <div class="col-md-4">
+                    <img src="{{ asset('assets/images/image.jpg') }}" alt="">
+                </div>
+            </div>
+        </div>
         <main class="py-4">
             @yield('content')
         </main>

@@ -19,10 +19,10 @@
         <div class="row" id="table-hover-row">
             <div class="col-12">
               <div class="card">
-                <div class="card-header">
-                  <h4 class="card-title">Info</h4>
-                  <p class="card-text">This is Sortable Table, Cilck on the Column Name to Sort</p>
-                  <a href="#" class="btn btn-secondary float-right" onclick="window.print()">Print</a>
+                <div class="card-header" style="font-size: 20px; color:red">
+                  <h4 class="card-title" style="font-size: 25px; color:red">Note</h4>
+                  <p class="card-text">Before Print this table you must be sort the table by - GROUP -</p>
+                  <a href="#" class="btn btn-danger float-right" onclick="window.print()">Print</a>
                 </div>
                 <style>
                     @media print {
@@ -54,6 +54,7 @@
                   <!-- table hover -->
                   <div class="table-responsive">
                     <table class="table table-hover mb-0 sortable">
+                    <h1>Student Inforamtion for Login</h1>
                       <thead>
                         <tr>
                             <th>NAME</th>
